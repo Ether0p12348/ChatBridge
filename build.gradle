@@ -1,0 +1,49 @@
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+
+plugins {
+    id 'java'
+    id("com.github.johnrengelman.shadow") version "8.1.1"
+}
+
+group = 'com.ethanrobins.chatbridge'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'ch.qos.logback:logback-classic:1.5.5'
+    implementation 'net.dv8tion:JDA:5.0.0-beta.24'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.0'
+    implementation 'org.ini4j:ini4j:0.5.4'
+}
+
+configurations {
+    shadow {
+        extendsFrom configurations.runtimeClasspath
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task Build(type: ShadowJar) {
+    group = 'shadow'
+    archiveBaseName = 'ChatBridge'
+    archiveVersion = project.version
+    archiveClassifier = ''
+
+    from sourceSets.main.output
+
+    manifest {
+        attributes('Main-Class': project.group + '.ChatBridge')
+        attributes('Implementation-Title': 'ChatBridge')
+        attributes('Implementation-Version': project.version)
+        attributes('Created-By': 'Ethan Robins')
+    }
+    configurations = [project.configurations.shadow]
+}
