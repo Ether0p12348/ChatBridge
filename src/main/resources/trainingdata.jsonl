@@ -1,40 +1,196 @@
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en_US)Bonjour"}, {"role": "assistant", "content": "__*French (fr_FR) \u2192 English (en_US)*__\nHello"}]}
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en_US)Hello"}, {"role": "assistant", "content": "__*English (en_US) \u2192 English (en_US)*__\nHello\n\n*The languages are the same.*"}]}
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en_US)*Bonjour*"}, {"role": "assistant", "content": "__*French (fr_FR) \u2192 English (en_US)*__\n*Hello*"}]}
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en_US)**Bonjour**"}, {"role": "assistant", "content": "__*French (fr_FR) \u2192 English (en_US)*__\n**Hello**"}]}
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en_US)||Bonjour||"}, {"role": "assistant", "content": "__*French (fr_FR) \u2192 English (en_US)*__\n||Hello||"}]}
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en_US)__Bonjour__"}, {"role": "assistant", "content": "__*French (fr_FR) \u2192 English (en_US)*__\n__Hello__"}]}
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en_US)~~Bonjour~~"}, {"role": "assistant", "content": "__*French (fr_FR) \u2192 English (en_US)*__\n~~Hello~~"}]}
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en_US)`Bonjour`"}, {"role": "assistant", "content": "__*French (fr_FR) \u2192 English (en_US)*__\n`Hello`"}]}
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en_US)```Bonjour```"}, {"role": "assistant", "content": "__*French (fr_FR) \u2192 English (en_US)*__\n```Hello```"}]}
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en_US)```\nBonjour\n```"}, {"role": "assistant", "content": "__*French (fr_FR) \u2192 English (en_US)*__\n```\nHello\n```"}]}
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en_US)```json\nBonjour\n```"}, {"role": "assistant", "content": "__*French (fr_FR) \u2192 English (en_US)*__\n```json\nHello\n```"}]}
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en_US)Bonjour, \n\ncomment ça va?"}, {"role": "assistant", "content": "__*French (fr_FR) \u2192 English (en_US)*__\n```\nHello, \n\nhow are you?\n```"}]}
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en_US)\\*Bonjour\\*"}, {"role": "assistant", "content": "__*French (fr_FR) \u2192 English (en_US)*__\n\\*Hello\\*"}]}
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en_US)\\*\\*Bonjour\\*\\*"}, {"role": "assistant", "content": "__*French (fr_FR) \u2192 English (en_US)*__\n\\*\\*Hello\\*\\*"}]}
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en_US)\\|\\|Bonjour\\|\\|"}, {"role": "assistant", "content": "__*French (fr_FR) \u2192 English (en_US)*__\n\\|\\|Hello\\|\\|"}]}
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en_US)\\_\\_Bonjour\\_\\_"}, {"role": "assistant", "content": "__*French (fr_FR) \u2192 English (en_US)*__\n\\_\\_Hello\\_\\_"}]}
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en_US)\\~\\~Bonjour\\~\\~"}, {"role": "assistant", "content": "__*French (fr_FR) \u2192 English (en_US)*__\n\\~\\~Hello\\~\\~"}]}
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en_US)\\`Bonjour\\`"}, {"role": "assistant", "content": "__*French (fr_FR) \u2192 English (en_US)*__\n\\`Hello\\`"}]}
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en_US)\\`\\`\\`Bonjour\\`\\`\\`"}, {"role": "assistant", "content": "__*French (fr_FR) \u2192 English (en_US)*__\n\\`\\`\\`Hello\\`\\`\\`"}]}
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en_US)\\`\\`\\`\nBonjour\n\\`\\`\\`"}, {"role": "assistant", "content": "__*French (fr_FR) \u2192 English (en_US)*__\n\\`\\`\\`\nHello\n\\`\\`\\`"}]}
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(de_DE)How are you?"}, {"role": "assistant", "content": "__*Englisch (en_US) \u2192 Deutsch (de_DE)*__\nWie geht's dir?"}]}
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(de_DE)Wie geht's dir?"}, {"role": "assistant", "content": "__*Deutsch (de_DE) \u2192 Deutsch (de_DE)*__\nWie geht's dir?\n\nDie Sprachen sind gleich."}]}
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(fr_FR)Hello, how are you?"}, {"role": "assistant", "content": "__*anglais (en_US) \u2192 français (fr_FR)*__\nBonjour, comment ça va?"}]}
-{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(fr_FR)Bonjour, comment ça va?"}, {"role": "assistant", "content": "__*français (fr_FR) \u2192 français (fr_FR)*__\nBonjour, comment ça va?\n\n*Les langues sont les mêmes.*"}]}
-{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(fr_FR)Command Name"}, {"role": "assistant", "content": "Nom de la commande"}]}
-{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(de_DE)Command Name"}, {"role": "assistant", "content": "Befehlsname"}]}
-{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(en_US)Nom de la commande"}, {"role": "assistant", "content": "Command Name"}]}
-{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(en_US)Befehlsname"}, {"role": "assistant", "content": "Command Name"}]}
-{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(en_US)Command Name"}, {"role": "assistant", "content": "Command Name"}]}
-{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(fr_FR)Translate"}, {"role": "assistant", "content": "Traduire"}]}
-{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(de_DE)Translate"}, {"role": "assistant", "content": "Übersetzen"}]}
-{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(en_US)Traduire"}, {"role": "assistant", "content": "Translate"}]}
-{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(en_US)Übersetzen"}, {"role": "assistant", "content": "Translate"}]}
-{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(en_US)Translate"}, {"role": "assistant", "content": "Translate"}]}
-{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(de_DE)How are you?"}, {"role": "assistant", "content": "Wie geht's dir?"}]}
-{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(de_DE)Wie geht's dir?"}, {"role": "assistant", "content": "Wie geht's dir?"}]}
-{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(fr_FR)Hello, how are you?"}, {"role": "assistant", "content": "Bonjour, comment ça va?"}]}
-{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(fr_FR)Bonjour, comment ça va?"}, {"role": "assistant", "content": "Bonjour, comment ça va?"}]}
-{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(en_US)Bonjour"}, {"role": "assistant", "content": "Hello"}]}
-{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(en_US)Hello"}, {"role": "assistant", "content": "Hello"}]}
+// DO THESE IN MORE LANGUAGES
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en-US)Bonjour"}, {"role": "assistant", "content": "__*French (fr) \u2192 English (en-US)*__\nHello"}]}
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en-US)Hello"}, {"role": "assistant", "content": "__*English (en-US) \u2192 English (en-US)*__\nHello\n\n*The languages are the same.*"}]}
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en-US)*Bonjour*"}, {"role": "assistant", "content": "__*French (fr) \u2192 English (en-US)*__\n*Hello*"}]}
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en-US)**Bonjour**"}, {"role": "assistant", "content": "__*French (fr) \u2192 English (en-US)*__\n**Hello**"}]}
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en-US)||Bonjour||"}, {"role": "assistant", "content": "__*French (fr) \u2192 English (en-US)*__\n||Hello||"}]}
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en-US)__Bonjour__"}, {"role": "assistant", "content": "__*French (fr) \u2192 English (en-US)*__\n__Hello__"}]}
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en-US)~~Bonjour~~"}, {"role": "assistant", "content": "__*French (fr) \u2192 English (en-US)*__\n~~Hello~~"}]}
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en-US)`Bonjour`"}, {"role": "assistant", "content": "__*French (fr) \u2192 English (en-US)*__\n`Hello`"}]}
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en-US)```Bonjour```"}, {"role": "assistant", "content": "__*French (fr) \u2192 English (en-US)*__\n```Hello```"}]}
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en-US)```\nBonjour\n```"}, {"role": "assistant", "content": "__*French (fr) \u2192 English (en-US)*__\n```\nHello\n```"}]}
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en-US)```json\nBonjour\n```"}, {"role": "assistant", "content": "__*French (fr) \u2192 English (en-US)*__\n```json\nHello\n```"}]}
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en-US)Bonjour, \n\ncomment ça va?"}, {"role": "assistant", "content": "__*French (fr) \u2192 English (en-US)*__\n```\nHello, \n\nhow are you?\n```"}]}
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en-US)\\*Bonjour\\*"}, {"role": "assistant", "content": "__*French (fr) \u2192 English (en-US)*__\n\\*Hello\\*"}]}
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en-US)\\*\\*Bonjour\\*\\*"}, {"role": "assistant", "content": "__*French (fr) \u2192 English (en-US)*__\n\\*\\*Hello\\*\\*"}]}
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en-US)\\|\\|Bonjour\\|\\|"}, {"role": "assistant", "content": "__*French (fr) \u2192 English (en-US)*__\n\\|\\|Hello\\|\\|"}]}
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en-US)\\_\\_Bonjour\\_\\_"}, {"role": "assistant", "content": "__*French (fr) \u2192 English (en-US)*__\n\\_\\_Hello\\_\\_"}]}
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en-US)\\~\\~Bonjour\\~\\~"}, {"role": "assistant", "content": "__*French (fr) \u2192 English (en-US)*__\n\\~\\~Hello\\~\\~"}]}
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en-US)\\`Bonjour\\`"}, {"role": "assistant", "content": "__*French (fr) \u2192 English (en-US)*__\n\\`Hello\\`"}]}
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en-US)\\`\\`\\`Bonjour\\`\\`\\`"}, {"role": "assistant", "content": "__*French (fr) \u2192 English (en-US)*__\n\\`\\`\\`Hello\\`\\`\\`"}]}
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(en-US)\\`\\`\\`\nBonjour\n\\`\\`\\`"}, {"role": "assistant", "content": "__*French (fr) \u2192 English (en-US)*__\n\\`\\`\\`\nHello\n\\`\\`\\`"}]}
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(de)How are you?"}, {"role": "assistant", "content": "__*Englisch (en-US) \u2192 Deutsch (de)*__\nWie geht's dir?"}]}
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(de)Wie geht's dir?"}, {"role": "assistant", "content": "__*Deutsch (de) \u2192 Deutsch (de)*__\nWie geht's dir?\n\nDie Sprachen sind gleich."}]}
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(fr)Hello, how are you?"}, {"role": "assistant", "content": "__*anglais (en-US) \u2192 français (fr)*__\nBonjour, comment ça va?"}]}
+{"messages": [{"role": "system", "content": "Decorated Translation."}, {"role": "user", "content": "(fr)Bonjour, comment ça va?"}, {"role": "assistant", "content": "__*français (fr) \u2192 français (fr)*__\nBonjour, comment ça va?\n\n*Les langues sont les mêmes.*"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(fr)Command Name"}, {"role": "assistant", "content": "Nom de la commande"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(de)Command Name"}, {"role": "assistant", "content": "Befehlsname"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(en-US)Nom de la commande"}, {"role": "assistant", "content": "Command Name"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(en-US)Befehlsname"}, {"role": "assistant", "content": "Command Name"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(en-US)Command Name"}, {"role": "assistant", "content": "Command Name"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(de)How are you?"}, {"role": "assistant", "content": "Wie geht's dir?"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(de)Wie geht's dir?"}, {"role": "assistant", "content": "Wie geht's dir?"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(fr)Hello, how are you?"}, {"role": "assistant", "content": "Bonjour, comment ça va?"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(fr)Bonjour, comment ça va?"}, {"role": "assistant", "content": "Bonjour, comment ça va?"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(en-US)Bonjour"}, {"role": "assistant", "content": "Hello"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(en-US)Hello"}, {"role": "assistant", "content": "Hello"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(vi)Translate"}, {"role": "assistant", "content": "Dịch"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(el)Translate"}, {"role": "assistant", "content": "Μετάφραση"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(lt)Translate"}, {"role": "assistant", "content": "Išversti"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(tr)Translate"}, {"role": "assistant", "content": "Çevir"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(de)Translate"}, {"role": "assistant", "content": "Übersetzen"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(zh-CN)Translate"}, {"role": "assistant", "content": "翻译"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(ja)Translate"}, {"role": "assistant", "content": "翻訳する"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(en-GB)Translate"}, {"role": "assistant", "content": "Translate"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(cs)Translate"}, {"role": "assistant", "content": "Přeložit"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(bg)Translate"}, {"role": "assistant", "content": "Превеждам"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(pt-BR)Translate"}, {"role": "assistant", "content": "Traduzir"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(uk)Translate"}, {"role": "assistant", "content": "Перекладати"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(hr)Translate"}, {"role": "assistant", "content": "Prevedi"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(nl)Translate"}, {"role": "assistant", "content": "Vertalen"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(zh-TW)Translate"}, {"role": "assistant", "content": "翻譯"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(sv-SE)Translate"}, {"role": "assistant", "content": "Översätt"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(fr)Translate"}, {"role": "assistant", "content": "Traduire"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(ru)Translate"}, {"role": "assistant", "content": "Перевести"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(da)Translate"}, {"role": "assistant", "content": "Oversæt"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(it)Translate"}, {"role": "assistant", "content": "Tradurre"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(no)Translate"}, {"role": "assistant", "content": "Oversette"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(ro)Translate"}, {"role": "assistant", "content": "Traduce"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(hi)Translate"}, {"role": "assistant", "content": "अनुवाद करें"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(es-419)Translate"}, {"role": "assistant", "content": "Traducir"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(ko)Translate"}, {"role": "assistant", "content": "번역하다"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(hu)Translate"}, {"role": "assistant", "content": "Fordítás"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(id)Translate"}, {"role": "assistant", "content": "Terjemahkan"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(es-ES)Translate"}, {"role": "assistant", "content": "Traducir"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(th)Translate"}, {"role": "assistant", "content": "แปล"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(fi)Translate"}, {"role": "assistant", "content": "Kääntää"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(pl)Translate"}, {"role": "assistant", "content": "Tłumaczyć"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(en-US)Translate"}, {"role": "assistant", "content": "Translate"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(vi)translate"}, {"role": "assistant", "content": "dịch"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(el)translate"}, {"role": "assistant", "content": "μετάφραση"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(lt)translate"}, {"role": "assistant", "content": "išversti"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(tr)translate"}, {"role": "assistant", "content": "çevir"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(de)translate"}, {"role": "assistant", "content": "übersetzen"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(zh-CN)translate"}, {"role": "assistant", "content": "翻译"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(ja)translate"}, {"role": "assistant", "content": "翻訳する"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(en-GB)translate"}, {"role": "assistant", "content": "translate"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(cs)translate"}, {"role": "assistant", "content": "přeložit"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(bg)translate"}, {"role": "assistant", "content": "превеждам"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(pt-BR)translate"}, {"role": "assistant", "content": "traduzir"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(uk)translate"}, {"role": "assistant", "content": "перекладати"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(hr)translate"}, {"role": "assistant", "content": "prevesti"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(nl)translate"}, {"role": "assistant", "content": "vertalen"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(zh-TW)translate"}, {"role": "assistant", "content": "翻譯"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(sv-SE)translate"}, {"role": "assistant", "content": "översätt"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(fr)translate"}, {"role": "assistant", "content": "traduire"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(ru)translate"}, {"role": "assistant", "content": "перевести"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(da)translate"}, {"role": "assistant", "content": "oversæt"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(it)translate"}, {"role": "assistant", "content": "tradurre"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(no)translate"}, {"role": "assistant", "content": "oversette"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(ro)translate"}, {"role": "assistant", "content": "traduce"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(hi)translate"}, {"role": "assistant", "content": "अनुवाद करें"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(es-419)translate"}, {"role": "assistant", "content": "traducir"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(ko)translate"}, {"role": "assistant", "content": "번역하다"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(hu)translate"}, {"role": "assistant", "content": "fordítás"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(id)translate"}, {"role": "assistant", "content": "terjemahkan"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(es-ES)translate"}, {"role": "assistant", "content": "traducir"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(th)translate"}, {"role": "assistant", "content": "แปล"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(fi)translate"}, {"role": "assistant", "content": "kääntää"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(pl)translate"}, {"role": "assistant", "content": "tłumaczyć"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(en-US)translate"}, {"role": "assistant", "content": "translate"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(vi)Public Translation"}, {"role": "assistant", "content": "Dịch Công Khai"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(el)Public Translation"}, {"role": "assistant", "content": "Δημόσια Μετάφραση"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(lt)Public Translation"}, {"role": "assistant", "content": "Viešas Vertimas"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(tr)Public Translation"}, {"role": "assistant", "content": "Genel Çeviri"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(de)Public Translation"}, {"role": "assistant", "content": "Öffentliche Übersetzung"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(zh-CN)Public Translation"}, {"role": "assistant", "content": "公共翻译"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(ja)Public Translation"}, {"role": "assistant", "content": "公開翻訳"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(en-GB)Public Translation"}, {"role": "assistant", "content": "Public Translation"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(cs)Public Translation"}, {"role": "assistant", "content": "Veřejný Překlad"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(bg)Public Translation"}, {"role": "assistant", "content": "Публичен Превод"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(pt-BR)Public Translation"}, {"role": "assistant", "content": "Tradução Pública"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(uk)Public Translation"}, {"role": "assistant", "content": "Переклад"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(hr)Public Translation"}, {"role": "assistant", "content": "Javni Prijevod"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(nl)Public Translation"}, {"role": "assistant", "content": "Publieke Vertaling"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(zh-TW)Public Translation"}, {"role": "assistant", "content": "公開翻譯"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(sv-SE)Public Translation"}, {"role": "assistant", "content": "Offentlig Översättning"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(fr)Public Translation"}, {"role": "assistant", "content": "Traduction Publique"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(ru)Public Translation"}, {"role": "assistant", "content": "Публичный Перевод"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(da)Public Translation"}, {"role": "assistant", "content": "Offentlig Oversættelse"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(it)Public Translation"}, {"role": "assistant", "content": "Traduzione Pubblica"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(no)Public Translation"}, {"role": "assistant", "content": "Offentlig Oversettelse"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(ro)Public Translation"}, {"role": "assistant", "content": "Traducere Publică"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(hi)Public Translation"}, {"role": "assistant", "content": "सार्वजनिक अनुवाद"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(es-419)Public Translation"}, {"role": "assistant", "content": "Traducción Pública"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(ko)Public Translation"}, {"role": "assistant", "content": "공개 번역"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(hu)Public Translation"}, {"role": "assistant", "content": "Nyilvános Fordítás"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(id)Public Translation"}, {"role": "assistant", "content": "Terjemahan Publik"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(es-ES)Public Translation"}, {"role": "assistant", "content": "Traducción Pública"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(th)Public Translation"}, {"role": "assistant", "content": "การแปลสาธารณะ"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(fi)Public Translation"}, {"role": "assistant", "content": "Julkinen Käännös"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(pl)Public Translation"}, {"role": "assistant", "content": "Publiczne Tłumaczenie"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(en-US)Public Translation"}, {"role": "assistant", "content": "Public Translation"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(vi)Private Translation"}, {"role": "assistant", "content": "Dịch Riêng Tư"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(el)Private Translation"}, {"role": "assistant", "content": "Ιδιωτική Μετάφραση"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(lt)Private Translation"}, {"role": "assistant", "content": "Privatus Vertimas"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(tr)Private Translation"}, {"role": "assistant", "content": "Özel Çeviri"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(de)Private Translation"}, {"role": "assistant", "content": "Private Übersetzung"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(zh-CN)Private Translation"}, {"role": "assistant", "content": "私人翻译"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(ja)Private Translation"}, {"role": "assistant", "content": "プライベート翻訳"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(en-GB)Private Translation"}, {"role": "assistant", "content": "Private Translation"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(cs)Private Translation"}, {"role": "assistant", "content": "Soukromý Překlad"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(bg)Private Translation"}, {"role": "assistant", "content": "Частен Превод"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(pt-BR)Private Translation"}, {"role": "assistant", "content": "Tradução Privada"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(uk)Private Translation"}, {"role": "assistant", "content": "Приватний Переклад"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(hr)Private Translation"}, {"role": "assistant", "content": "Privatni Prijevod"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(nl)Private Translation"}, {"role": "assistant", "content": "Privévertaling"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(zh-TW)Private Translation"}, {"role": "assistant", "content": "私人翻譯"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(sv-SE)Private Translation"}, {"role": "assistant", "content": "Privat Översättning"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(fr)Private Translation"}, {"role": "assistant", "content": "Traduction Privée"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(ru)Private Translation"}, {"role": "assistant", "content": "Частный Перевод"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(da)Private Translation"}, {"role": "assistant", "content": "Privat Oversættelse"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(it)Private Translation"}, {"role": "assistant", "content": "Traduzione Privata"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(no)Private Translation"}, {"role": "assistant", "content": "Privat Oversettelse"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(ro)Private Translation"}, {"role": "assistant", "content": "Traducere Privată"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(hi)Private Translation"}, {"role": "assistant", "content": "निजी अनुवाद"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(es-419)Private Translation"}, {"role": "assistant", "content": "Traducción Privada"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(ko)Private Translation"}, {"role": "assistant", "content": "비공개 번역"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(hu)Private Translation"}, {"role": "assistant", "content": "Magán Fordítás"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(id)Private Translation"}, {"role": "assistant", "content": "Terjemahan Pribadi"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(es-ES)Private Translation"}, {"role": "assistant", "content": "Traducción Privada"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(th)Private Translation"}, {"role": "assistant", "content": "การแปลส่วนตัว"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(fi)Private Translation"}, {"role": "assistant", "content": "Yksityinen Käännös"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(pl)Private Translation"}, {"role": "assistant", "content": "Prywatne Tłumaczenie"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(en-US)Private Translation"}, {"role": "assistant", "content": "Private Translation"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(vi)Translate a message or input to another language"}, {"role": "assistant", "content": "Dịch một tin nhắn hoặc đầu vào sang ngôn ngữ khác"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(el)Translate a message or input to another language"}, {"role": "assistant", "content": "Μετάφραση ενός μηνύματος ή εισόδου σε άλλη γλώσσα"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(lt)Translate a message or input to another language"}, {"role": "assistant", "content": "Išverskite žinutę arba įvestį į kitą kalbą"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(tr)Translate a message or input to another language"}, {"role": "assistant", "content": "Bir mesajı veya girişi başka bir dile çevirin"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(de)Translate a message or input to another language"}, {"role": "assistant", "content": "Eine Nachricht oder Eingabe in eine andere Sprache übersetzen"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(zh-CN)Translate a message or input to another language"}, {"role": "assistant", "content": "将消息或输入翻译成另一种语言"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(ja)Translate a message or input to another language"}, {"role": "assistant", "content": "メッセージまたは入力を別の言語に翻訳する"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(en-GB)Translate a message or input to another language"}, {"role": "assistant", "content": "Translate a message or input to another language"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(cs)Translate a message or input to another language"}, {"role": "assistant", "content": "Přeložte zprávu nebo vstup do jiného jazyka"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(bg)Translate a message or input to another language"}, {"role": "assistant", "content": "Преведете съобщение или вход на друг език"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(pt-BR)Translate a message or input to another language"}, {"role": "assistant", "content": "Traduzir uma mensagem ou entrada para outro idioma"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(uk)Translate a message or input to another language"}, {"role": "assistant", "content": "Перекласти повідомлення або введення на іншу мову"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(hr)Translate a message or input to another language"}, {"role": "assistant", "content": "Prevedite poruku ili unos na drugi jezik"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(nl)Translate a message or input to another language"}, {"role": "assistant", "content": "Vertaal een bericht of invoer naar een andere taal"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(zh-TW)Translate a message or input to another language"}, {"role": "assistant", "content": "將消息或輸入翻譯成另一種語言"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(sv-SE)Translate a message or input to another language"}, {"role": "assistant", "content": "Översätt ett meddelande eller inmatning till ett annat språk"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(fr)Translate a message or input to another language"}, {"role": "assistant", "content": "Traduire un message ou une entrée dans une autre langue"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(ru)Translate a message or input to another language"}, {"role": "assistant", "content": "Перевести сообщение или ввод на другой язык"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(da)Translate a message or input to another language"}, {"role": "assistant", "content": "Oversæt en besked eller input til et andet sprog"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(it)Translate a message or input to another language"}, {"role": "assistant", "content": "Tradurre un messaggio o un input in un'altra lingua"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(no)Translate a message or input to another language"}, {"role": "assistant", "content": "Oversett en melding eller inndata til et annet språk"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(ro)Translate a message or input to another language"}, {"role": "assistant", "content": "Traduceți un mesaj sau o intrare într-o altă limbă"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(hi)Translate a message or input to another language"}, {"role": "assistant", "content": "किसी संदेश या इनपुट को किसी अन्य भाषा में अनुवाद करें"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(es-419)Translate a message or input to another language"}, {"role": "assistant", "content": "Traducir un mensaje o entrada a otro idioma"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(ko)Translate a message or input to another language"}, {"role": "assistant", "content": "메시지나 입력을 다른 언어로 번역하다"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(hu)Translate a message or input to another language"}, {"role": "assistant", "content": "Üzenet vagy bemenet lefordítása egy másik nyelvre"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(id)Translate a message or input to another language"}, {"role": "assistant", "content": "Terjemahkan pesan atau input ke bahasa lain"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(es-ES)Translate a message or input to another language"}, {"role": "assistant", "content": "Traducir un mensaje o entrada a otro idioma"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(th)Translate a message or input to another language"}, {"role": "assistant", "content": "แปลข้อความหรืออินพุตเป็นภาษาอื่น"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(fi)Translate a message or input to another language"}, {"role": "assistant", "content": "Käännä viesti tai syöte toiselle kielelle"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(pl)Translate a message or input to another language"}, {"role": "assistant", "content": "Przetłumacz wiadomość lub dane wejściowe na inny język"}]}
+{"messages": [{"role": "system", "content": "Plain Translation."}, {"role": "user", "content": "(en-US)Translate a message or input to another language"}, {"role": "assistant", "content": "Translate a message or input to another language"}]}

@@ -1,19 +1,15 @@
 package com.ethan.chatbridge;
 
 import com.ethan.chatbridge.events.MessageInteraction;
-import com.ethan.chatbridge.exceptions.HttpErrorCode;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ArrayNode;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
-import net.dv8tion.jda.api.events.interaction.command.MessageContextInteractionEvent;
 import net.dv8tion.jda.api.interactions.DiscordLocale;
 import net.dv8tion.jda.api.interactions.commands.Command;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
+import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import org.ini4j.Ini;
 import org.jetbrains.annotations.NotNull;
@@ -21,14 +17,13 @@ import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.util.*;
-import java.util.concurrent.*;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class ChatBridge {
@@ -65,171 +60,245 @@ public class ChatBridge {
 
 
         jda.updateCommands().addCommands(
-                Commands.slash("translate", "translate a message or input to another language"),
-                localeContextCommands(jda, Command.Type.MESSAGE, "Translate")
+                //localeSlashCommand("translate", "Translate a message or input to another language"),
+                //Commands.slash("translate", "Translate a message or input to another language"),
+                localeContextCommand(Command.Type.MESSAGE, "Secret Translation"),
+                localeContextCommand(Command.Type.MESSAGE, "Public Translation")
 
         ).queue();
 
-        jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.customStatus("https://chatbridge.ethanrobins.com"));
+        String[] modelParts = secret.get("chatgpt", "model").split(Pattern.quote(":"));
+
+        jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.customStatus(modelParts[1] + ":" + modelParts[3]));
     }
 
-    private static CommandData localeContextCommands(@NotNull JDA jda, @NotNull Command.Type type, @NotNull String name) {
-        CommandData cmd = Commands.context(type, name);
-        List<DiscordLocale> locales = Arrays.stream(DiscordLocale.values()).toList();
+    private static SlashCommandData localeSlashCommand (@NotNull String name, @NotNull String description) {
+        SlashCommandData cmd = Commands.slash(name, description);
+        List<DiscordLocale> locales = Arrays.stream(DiscordLocale.values())
+                .filter(locale -> locale != DiscordLocale.UNKNOWN)
+                .collect(Collectors.toList());
 
-        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-        List<CompletableFuture<String>> futures = new ArrayList<>();
+        List<SlashCommandPayload> payloads = new ArrayList<>();
+        for (DiscordLocale l : locales) {
+            Payload namePayload = new Payload(l.getLocale(), null, TranslateType.PLAIN.getSystemPrompt(), "(" + l.getLocale() + ")" + name, null);
+            Payload descPayload = new Payload(l.getLocale(), null, TranslateType.PLAIN.getSystemPrompt(), "(" + l.getLocale() + ")" + description, null);
 
-        for (int i = 0; i < locales.size(); i++) {
-            final String systemMessageContent = TranslateType.PLAIN.getSystemPrompt();
-            final String userMessageContent = "(" + locales.get(i).getLocale() + ")" + name;
+            SlashCommandPayload payload = new SlashCommandPayload(null, namePayload, descPayload);
+            payloads.add(payload);
+        }
 
-            CompletableFuture<String> future = new CompletableFuture<>();
-            scheduler.schedule(() -> {
-                translateAsync(systemMessageContent, userMessageContent, 1000).whenComplete((result, ex) -> {
-                    if (ex != null) {
-                        future.completeExceptionally(ex);
-                    } else {
-                        future.complete(result);
+        SlashCommandBatch batch = new SlashCommandBatch().setId("slash_translate");
+        for (SlashCommandPayload p : payloads) {
+            batch.add(p);
+        }
+        batch.queue(0);
+
+        List<DiscordLocale> checkLocales = new ArrayList<>(locales);
+        for (SlashCommandPayload p : batch.getPayloads()) {
+            DiscordLocale loc = DiscordLocale.ENGLISH_US;
+            for (DiscordLocale l : locales) {
+                if (l.getLocale().equalsIgnoreCase(p.getId())) {
+                    loc = l;
+                }
+            }
+
+            if (p.getName().getResult() != null) {
+                checkLocales.remove(loc);
+                if (loc != DiscordLocale.UNKNOWN && !p.getId().equalsIgnoreCase("unknown")) {
+                    try {
+                        cmd.setNameLocalization(loc, p.getName().getResult());
+                    } catch (IllegalArgumentException err) {
+                        cmd.setNameLocalization(loc, batch.get("en-US").getName().getResult());
                     }
-                });
-            }, i * 22, TimeUnit.SECONDS); // Schedule each request with a 22-second interval
-
-            futures.add(future);
-        }
-
-        // Wait for all translations to complete
-        List<String> translated;
-        try {
-            translated = CompletableFuture.allOf(futures.toArray(new CompletableFuture[0]))
-                    .thenApply(v -> futures.stream().map(CompletableFuture::join).collect(Collectors.toList()))
-                    .get();
-        } catch (InterruptedException | ExecutionException e) {
-            throw new RuntimeException("Failed to complete translations", e);
-        }
-
-        if (translated == null || translated.size() != locales.size()) {
-            throw new RuntimeException("Could not find the expected number of translated locales.");
-        }
-
-        Map<DiscordLocale, String> translatedWithLocale = new HashMap<>();
-        for (int i = 0; i < locales.size(); i++) {
-            if (translated.get(i) != null) {
-                translatedWithLocale.put(locales.get(i), translated.get(i));
+                    System.out.println(loc.getLocale() + " has been added to " + name + " nameLocalizations");
+                } else {
+                    System.out.println(p.getId() + " was unable to be added to " + name + " nameLocalizations: Set to " + loc.getLocale());
+                }
+                System.out.println(checkLocales);
+            }
+            if (p.getDescription().getResult() != null) {
+                System.out.println(loc.getLocale() + " has been added to " + name + " descriptionLocalizations");
+                //checkLocales.remove(loc);
+                cmd.setDescriptionLocalization(loc, p.getDescription().getResult());
+                //System.out.println(checkLocales);
             }
         }
 
-        cmd.setNameLocalizations(translatedWithLocale);
-        System.out.println("\"Translate\" MessageContextCommand successfully translated in all Discord locales.");
-        scheduler.shutdown(); // Shutdown the scheduler
         return cmd;
     }
 
-    public static CompletableFuture<String> translateAsync(@NotNull String systemMessageContent,
-                                                           @NotNull String userMessageContent, int maxTokens) {
-        final String API_URL = ChatBridge.secret.get("chatgpt", "url");
-        final String API_KEY = ChatBridge.secret.get("chatgpt", "key");
-
-        return CompletableFuture.supplyAsync(() -> {
-            try {
-                Payload payload = new Payload(null, systemMessageContent, userMessageContent, maxTokens);
-
-                ObjectMapper objectMapper = new ObjectMapper();
-                String jsonPayload = objectMapper.writeValueAsString(payload);
-
-                HttpClient client = HttpClient.newHttpClient();
-                HttpRequest request = HttpRequest.newBuilder()
-                        .uri(new URI(API_URL))
-                        .header("Authorization", "Bearer " + API_KEY)
-                        .header("Content-Type", "application/json")
-                        .POST(HttpRequest.BodyPublishers.ofString(jsonPayload))
-                        .build();
-
-                HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
-                if (response.statusCode() != 200) {
-                    throw new HttpErrorCode(response.statusCode(), "Failed to translate the text. HTTP Error Code: " + response.statusCode() + "\n" + response.body());
-                }
-
-                JsonNode jsonNode = objectMapper.readTree(response.body());
-                System.out.println(userMessageContent + " has completed.");
-                return jsonNode.path("choices").get(0).path("message").path("content").asText().trim();
-
-            } catch (URISyntaxException | IOException | InterruptedException | HttpErrorCode e) {
-                e.printStackTrace();
-                return null;
-            }
-        });
-    }
-
-    /*private static CommandData localeContextCommands (@NotNull JDA jda, @NotNull Command.Type type, @NotNull String name) {
+    private static CommandData localeContextCommand (@NotNull Command.Type type, @NotNull String name) {
         CommandData cmd = Commands.context(type, name);
-        List<DiscordLocale> locales = Arrays.stream(DiscordLocale.values()).toList();
-        BatchPayload batchPayload = new BatchPayload();
+        List<DiscordLocale> locales = Arrays.stream(DiscordLocale.values())
+                .filter(locale -> !locale.getLocale().equalsIgnoreCase("unknown"))
+                .collect(Collectors.toList());
 
-        for (int i = 0; i < locales.size(); i++) {
-            batchPayload.addRequest("request-" + i, null, TranslateType.PLAIN.getSystemPrompt(), "(" + locales.get(i).getLocale() + ")" + name, 1000);
+        List<Payload> payloads = new ArrayList<>();
+        for (DiscordLocale l : locales) {
+            Payload payload = new Payload(l.getLocale(), null, TranslateType.PLAIN.getSystemPrompt(), "(" + l.getLocale() + ")" + name, null);
+            payloads.add(payload);
         }
 
-        List<String> translated = translate(batchPayload, null);
+        Batch batch = new Batch().setId("context_translate");
+        for (Payload p : payloads) {
+            batch.add(p);
+        }
+        batch.queue(0);
 
-        if (translated == null || translated.size() != locales.size()) {
-            throw new RuntimeException("Could not find the expected number of translated locales.");
+        List<DiscordLocale> checkLocales = new ArrayList<>(locales);
+        for (Payload p : batch.getPayloads()) {
+            DiscordLocale loc = DiscordLocale.UNKNOWN;
+            for (DiscordLocale l : locales) {
+                if (l.getLocale().equalsIgnoreCase(p.getId())) {
+                    loc = l;
+                }
+            }
+
+            if (p.getResult() != null) {
+                System.out.println(loc.getLocale() + " has been added to " + name + " nameLocalizations");
+                checkLocales.remove(loc);
+                cmd.setNameLocalization(loc, p.getResult());
+            }
         }
 
-        Map<DiscordLocale, String> translatedWithLocale = new HashMap<>();
-        for (int i = 0; i < locales.size(); i++) {
-            translatedWithLocale.put(locales.get(i), translated.get(i));
-        }
-
-        cmd.setNameLocalizations(translatedWithLocale);
-        System.out.println("\"Translate\" MessageContextCommand successfully translated in all Discord locales.");
         return cmd;
     }
 
-    public static List<String> translate(@NotNull BatchPayload payloads, @Nullable List<MessageContextInteractionEvent> events) {
-        List<String> translated = new ArrayList<>();
-        final String API_URL = ChatBridge.secret.get("chatgpt", "url");
-        final String API_KEY = ChatBridge.secret.get("chatgpt", "key");
+    public static String genId (int length) {
+        String availChars = "0123456789";
+        Random rand = new Random();
+        StringBuilder sb = new StringBuilder(length);
+        for (int i = 0; i < length; i++) {
+            int randomIndex = rand.nextInt(availChars.length());
+            sb.append(availChars.charAt(randomIndex));
+        }
+        return sb.toString();
+    }
 
-        HttpClient client = HttpClient.newHttpClient();
+    public static class SlashCommandPayload {
+        private String id = "slashpayload_" + ChatBridge.genId(8);
+        private Payload name;
+        private Payload description;
 
-        try {
-            ObjectMapper outMapper = new ObjectMapper();
-            String jsonPayload = outMapper.writeValueAsString(payloads);
+        public SlashCommandPayload(@Nullable String id, @NotNull Payload name, @NotNull Payload description) {
+            this.id = id != null ? id : this.id;
+            this.name = name;
+            this.description = description;
+        }
 
-            System.out.println(jsonPayload);
+        public SlashCommandPayload(){}
 
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(new URI(API_URL))
-                    .header("Authorization", "Bearer " + API_KEY)
-                    .header("Content-Type", "application/json")
-                    .POST(HttpRequest.BodyPublishers.ofString(jsonPayload))
-                    .build();
+        public SlashCommandPayload setId (@NotNull String id) {
+            this.id = id;
+            return this;
+        }
 
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        public SlashCommandPayload setName (@NotNull Payload name) {
+            this.name = name;
+            return this;
+        }
 
-            if (response.statusCode() != 200) {
-                throw new HttpErrorCode(response.statusCode(), "Failed to translate the texts. HTTP Error Code: " + response.statusCode() + "\n" + response.body());
-            }
+        public SlashCommandPayload setDescription (@NotNull Payload description) {
+            this.description = description;
+            return this;
+        }
 
-            ObjectMapper inMapper = new ObjectMapper();
-            ArrayNode jsonNodes = inMapper.readValue(response.body(), ArrayNode.class);
+        public String getId() {
+            return this.id;
+        }
 
-            for (JsonNode jsonNode : jsonNodes) {
-                String translatedText = jsonNode.path("choices").get(0).path("message").path("content").asText().trim();
-                translated.add(translatedText);
-            }
+        public Payload getName() {
+            return this.name;
+        }
 
-            return translated;
-        } catch (URISyntaxException | IOException | InterruptedException | HttpErrorCode e) {
-            if (events != null) {
-                for (MessageContextInteractionEvent event : events) {
-                    event.getHook().editOriginal("**Failed to Translate the message. Please report this to <@269490769583276032>.**").queue(); // Make sure to translate this to the user's locale when single requests are possible
+        public Payload getDescription() {
+            return this.description;
+        }
+    }
+
+    public static class SlashCommandBatch {
+        private String id = "slashbatch_" + ChatBridge.genId(8);
+        private final List<SlashCommandPayload> payloads = new ArrayList<>();
+
+        public SlashCommandBatch (@Nullable String id, SlashCommandPayload... payload) {
+            this.id = id != null ? id : this.id;
+            payloads.addAll(Arrays.asList(payload));
+        }
+
+        public SlashCommandBatch(){}
+
+        public SlashCommandBatch setId (String id) {
+            this.id = id;
+            return this;
+        }
+
+        public SlashCommandBatch add (SlashCommandPayload payload) {
+            this.payloads.add(payload);
+            return this;
+        }
+
+        public SlashCommandBatch remove (String id) {
+            payloads.removeIf(payload -> payload.getId().equals(id));
+            return this;
+        }
+
+        public String getId() {
+            return this.id;
+        }
+
+        public List<SlashCommandPayload> getPayloads() {
+            return this.payloads;
+        }
+
+        public SlashCommandPayload get (String id) {
+            for (SlashCommandPayload p : this.payloads) {
+                if (p.getId().equals(id)) {
+                    return p;
                 }
             }
-            e.printStackTrace();
+
             return null;
         }
-    }*/
+
+        public SlashCommandBatch queue(long delay) {
+            System.out.println("Beginning batch: " + this.id);
+
+            ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+            Map<Payload, CompletableFuture<String>> nameFutures = new HashMap<>();
+            Map<Payload, CompletableFuture<String>> descFutures = new HashMap<>();
+
+            for (int i = 0; i < payloads.size(); i++) {
+                CompletableFuture<String> nameFuture = new CompletableFuture<>();
+                CompletableFuture<String> descFuture = new CompletableFuture<>();
+                final int in = i;
+                scheduler.schedule(() -> {
+                    payloads.get(in).getName().translateAsync().whenComplete((result, ex) -> {
+                        if (ex != null) {
+                            nameFuture.completeExceptionally(ex);
+                        } else {
+                            nameFuture.complete(result);
+                        }
+                    });
+                    payloads.get(in).getDescription().translateAsync().whenComplete((result, ex) -> {
+                        if (ex != null) {
+                            descFuture.completeExceptionally(ex);
+                        } else {
+                            descFuture.complete(result);
+                        }
+                    });
+                }, i * delay, TimeUnit.SECONDS);
+
+                nameFutures.put(payloads.get(i).getName(), nameFuture);
+                descFutures.put(payloads.get(i).getDescription(), descFuture);
+            }
+
+            CompletableFuture.allOf(nameFutures.values().toArray(new CompletableFuture[0])).join();
+            CompletableFuture.allOf(descFutures.values().toArray(new CompletableFuture[0])).join();
+            scheduler.shutdown();
+
+            System.out.println("Batch completed: " + this.id);
+
+            return this;
+        }
+    }
 }
